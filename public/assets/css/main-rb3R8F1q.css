@@ -2956,3 +2956,15 @@ h3[data-v-32541cec], h3 span[data-v-32541cec], .title-notification-container * {
     #about #about-text-container p[data-v-b9070ebd] { font-size: 13px; line-height: 1.5; margin-bottom: 10px; }
     #about .big-title[data-v-b9070ebd] { font-size: clamp(36px, min(6vw, 10vh), 90px); }
 }
+
+/* ===== TECHIDEATE nav: MAJOR EVENTS / MINOR EVENTS labels need more room ===== */
+.surround[data-v-da121a04] { width: 150px; }
+.surround p[data-v-da121a04] { white-space: nowrap; }
+.mobile .surround[data-v-da121a04] { width: auto !important; min-width: 0; padding: 0 12px; }
+.mobile .surround p[data-v-da121a04] { font-size: 12px !important; letter-spacing: 0; }
+.mobile.portrait .surround[data-v-1c573e25]:nth-child(2) { margin-left: 6px; margin-right: 6px; }
+.mobile #topmenu .surround[data-v-1c573e25] { width: auto !important; padding: 0 10px; }
+
+/* ===== TECHIDEATE minor events page: smaller main title ===== */
+#about .big-title[data-v-b9070ebd] { font-size: clamp(36px, min(4.6vw, 8vh), 78px); letter-spacing: .04em; }
+@media (max-height: 760px) { #about .big-title[data-v-b9070ebd] { font-size: clamp(32px, min(4.2vw, 7vh), 64px); } }

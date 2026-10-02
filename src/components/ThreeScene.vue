@@ -45,7 +45,7 @@ onMounted(() => {
   scriptEl = document.createElement('script')
   scriptEl.type = 'module'
   scriptEl.crossOrigin = ''
-  scriptEl.src = '/assets/js/main-BAxw1krX.js?v=screens5'
+  scriptEl.src = '/assets/js/main-BAxw1krX.js?v=screens6'
   document.body.appendChild(scriptEl)
 
   // TECHIDEATE screen manager: fills the numbered city screens from public/screens/screens.json
@@ -59,7 +59,7 @@ onMounted(() => {
   // TECHIDEATE About page: intro + event timeline (content from public/screens/screens.json)
   if (!document.querySelector('script[src*="about-timeline"]')) {
     const aboutEl = document.createElement('script')
-    aboutEl.src = '/about/about-timeline.js?v=about1'
+    aboutEl.src = '/about/about-timeline.js?v=about3'
     aboutEl.defer = true
     document.body.appendChild(aboutEl)
   }

@@ -73570,10 +73570,10 @@ const YM = Ls(xd0, [
                     name: "EXPLORE",
                     path: "/"
                 }, {
-                    name: "EVENTS",
+                    name: "MAJOR EVENTS",
                     path: "/works"
                 }, {
-                    name: "ABOUT",
+                    name: "MINOR EVENTS",
                     path: "/about"
                 }]
             }

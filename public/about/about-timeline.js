@@ -3,8 +3,8 @@
  * ----------------------------------------------------
  * Everything shown here comes from public/screens/screens.json:
  *   "about"        -> intro text, the 3 info cards, contact email
- *   "majorEvents"  -> the timeline (sorted by date and time automatically)
- *                     poster = image shown next to the event (if empty, the video is shown)
+ *   "clubEvents"   -> the timeline (sorted by date and time automatically)
+ *                     posterWide (or posterTall) = image shown next to the event
  * The numbers (days, events, clubs) are counted automatically from screens.json.
  *
  * You normally do NOT need to edit this file. Edit screens.json instead.
@@ -29,7 +29,7 @@
     '#techi-about .ta-mono{font-family:"JetBrains Mono",ui-monospace,Consolas,monospace}',
 
     /* hero */
-    '#techi-about .ta-hero{padding-top:calc(clamp(130px,17vh,170px) + clamp(150px,22vh,230px));min-height:100vh;display:flex;flex-direction:column;justify-content:flex-start;max-width:1180px}',
+    '#techi-about .ta-hero{padding-top:calc(clamp(130px,17vh,170px) + clamp(140px,19vh,190px));min-height:0;display:flex;flex-direction:column;justify-content:flex-start;max-width:1180px}',
     '#techi-about .ta-lead{font-size:clamp(17px,1.45vw,23px);line-height:1.55;font-weight:500;max-width:780px;margin:0 0 34px;text-shadow:0 0 14px rgba(0,168,255,.45),0 2px 6px #000}',
     '#techi-about .ta-stats{display:flex;flex-wrap:wrap;gap:12px;margin:0 0 30px}',
     '#techi-about .ta-stat{min-width:150px;padding:14px 20px 12px;border:1px solid var(--ta-line);border-radius:12px;background:rgba(6,22,46,.55);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px)}',
@@ -43,16 +43,29 @@
     '#techi-about .ta-links{display:flex;flex-wrap:wrap;gap:10px 24px;align-items:center}',
     '#techi-about .ta-links a{color:var(--ta-blue);font-size:18px;text-decoration:none;font-weight:500}',
     '#techi-about .ta-links a:hover{text-decoration:underline}',
-    '#techi-about .ta-hint{margin-top:auto;padding:40px 0 10px;font-size:11px;letter-spacing:.32em;color:var(--ta-soft);display:flex;align-items:center;gap:12px}',
+    '#techi-about .ta-hint{margin-top:0;padding:56px 0 10px;font-size:11px;letter-spacing:.32em;color:var(--ta-soft);display:flex;align-items:center;gap:12px}',
     '#techi-about .ta-hint i{display:inline-block;width:1px;height:34px;background:linear-gradient(var(--ta-blue),transparent);animation:taDrop 1.8s ease-in-out infinite}',
     '@keyframes taDrop{0%{transform:scaleY(0);transform-origin:top}50%{transform:scaleY(1);transform-origin:top}51%{transform-origin:bottom}100%{transform:scaleY(0);transform-origin:bottom}}',
 
     /* timeline header */
     '#techi-about .ta-head{text-align:center;margin:40px auto 50px}',
     '#techi-about .ta-head h2{margin:0 0 12px;font-size:12px;letter-spacing:.34em;color:var(--ta-cyan);font-weight:700}',
-    '#techi-about .ta-head h3{margin:0;font-size:clamp(34px,4.4vw,64px);line-height:1;letter-spacing:.04em;color:var(--ta-blue);font-weight:700;text-shadow:0 0 30px rgba(0,168,255,.45)}',
+    '#techi-about .ta-head h3{margin:0;font-size:clamp(28px,3.2vw,50px);line-height:1;letter-spacing:.04em;color:var(--ta-blue);font-weight:700;text-shadow:0 0 30px rgba(0,168,255,.45)}',
     '#techi-about .ta-head p{margin:14px 0 0;font-size:14px;color:var(--ta-soft)}',
 
+    /* day tabs */
+    '#techi-about .ta-tabs{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin:0 auto 34px;max-width:900px}',
+    '#techi-about .ta-tabs button{cursor:pointer;min-width:118px;padding:10px 18px;border-radius:12px;border:1px solid var(--ta-line);background:rgba(6,22,46,.6);color:var(--ta-ink);font:inherit;text-align:center;transition:all .25s}',
+    '#techi-about .ta-tabs button b{display:block;font-size:14px;letter-spacing:.16em}',
+    '#techi-about .ta-tabs button span{display:block;margin-top:4px;font-size:10px;letter-spacing:.2em;color:var(--ta-soft)}',
+    '#techi-about .ta-tabs button:hover{border-color:var(--ta-blue)}',
+    '#techi-about .ta-tabs button.on{background:var(--ta-blue);border-color:var(--ta-blue);color:#001a33;box-shadow:0 0 22px rgba(0,168,255,.55)}',
+    '#techi-about .ta-tabs button.on span{color:#00335c}',
+    '#techi-about .ta-empty{text-align:center;color:var(--ta-soft);padding:40px 0}',
+    '#techi-about .ta-badge{position:absolute;top:18px;right:18px;padding:4px 10px;border-radius:999px;font-size:10px;letter-spacing:.18em;border:1px solid var(--ta-line);color:var(--ta-soft)}',
+    '#techi-about .ta-badge.ta-up{border-color:rgba(0,168,255,.6);color:#7fd4ff}',
+    '#techi-about .ta-badge.ta-live{background:#00a8ff;border-color:#00a8ff;color:#001a33;box-shadow:0 0 14px rgba(0,168,255,.7)}',
+    '#techi-about .ta-item.ta-done .ta-card{opacity:.75}',
     /* timeline */
     '#techi-about .ta-tl{position:relative;max-width:1080px;margin:0 auto;padding:10px 0 30px}',
     '#techi-about .ta-rail,#techi-about .ta-fill{position:absolute;left:50%;top:0;width:2px;margin-left:-1px;border-radius:2px}',
@@ -61,17 +74,22 @@
     '#techi-about .ta-day{position:relative;display:flex;justify-content:center;margin:26px 0 30px;z-index:2}',
     '#techi-about .ta-day span{padding:8px 16px;border-radius:999px;background:#03101f;border:1px solid var(--ta-blue);color:var(--ta-ink);font-size:12px;letter-spacing:.2em;box-shadow:0 0 16px rgba(0,168,255,.35)}',
     '#techi-about .ta-day span b{color:var(--ta-blue)}',
-    '#techi-about .ta-item{position:relative;display:grid;grid-template-columns:minmax(0,1fr) 64px minmax(0,1fr);align-items:center;margin:0 0 46px}',
+    '#techi-about .ta-item{position:relative;display:grid;grid-template-columns:minmax(0,1fr) 64px minmax(0,1fr);align-items:center;margin:0 0 30px}',
+    '#techi-about .ta-noimg{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;color:#00a8ff;font-size:14px;letter-spacing:.2em;text-align:center;padding:10px}',
+    '#techi-about .ta-filter{position:sticky;top:96px;z-index:5;display:flex;justify-content:center;flex-wrap:wrap;gap:8px;margin:0 auto 26px;padding:8px}',
+    '#techi-about .ta-chip{cursor:pointer;padding:8px 16px;border-radius:999px;border:1px solid var(--ta-line);background:rgba(3,16,31,.85);color:var(--ta-soft);font:600 12px/1 forma-djr-display,"Segoe UI",Arial,sans-serif;letter-spacing:.2em;transition:all .2s;backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px)}',
+    '#techi-about .ta-chip:hover{border-color:var(--ta-blue);color:var(--ta-ink)}',
+    '#techi-about .ta-chip.ta-on{background:var(--ta-blue);border-color:var(--ta-blue);color:#001a33;box-shadow:0 0 18px rgba(0,168,255,.5)}',
     '#techi-about .ta-node{grid-column:2;grid-row:1;justify-self:center;width:14px;height:14px;border-radius:50%;background:#03101f;border:2px solid var(--ta-line);transition:all .4s;z-index:2}',
     '#techi-about .ta-item.ta-in .ta-node{border-color:var(--ta-cyan);background:var(--ta-blue);box-shadow:0 0 0 5px rgba(0,168,255,.15),0 0 16px var(--ta-blue)}',
-    '#techi-about .ta-media{grid-row:1;position:relative;width:min(100%,320px);aspect-ratio:4/5;border-radius:14px;overflow:hidden;border:1px solid rgba(0,168,255,.45);background:#06122a;box-shadow:0 10px 40px rgba(0,0,0,.55),0 0 24px rgba(0,168,255,.18)}',
+    '#techi-about .ta-media{grid-row:1;position:relative;width:min(100%,360px);aspect-ratio:2/1;border-radius:14px;overflow:hidden;border:1px solid rgba(0,168,255,.45);background:#06122a;box-shadow:0 10px 40px rgba(0,0,0,.55),0 0 24px rgba(0,168,255,.18)}',
     '#techi-about .ta-media .ta-bg{position:absolute;inset:-20px;background-size:cover;background-position:center;filter:blur(18px) brightness(.55)}',
     '#techi-about .ta-media img,#techi-about .ta-media video{position:relative;display:block;width:100%;height:100%;object-fit:contain}',
-    '#techi-about .ta-card{grid-row:1;position:relative;width:min(100%,470px);padding:24px 26px 22px;border-radius:14px;background:var(--ta-card);border:1px solid var(--ta-line);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);box-shadow:0 10px 40px rgba(0,0,0,.45)}',
+    '#techi-about .ta-card{grid-row:1;position:relative;width:min(100%,420px);padding:18px 22px 18px;border-radius:14px;background:var(--ta-card);border:1px solid var(--ta-line);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);box-shadow:0 10px 40px rgba(0,0,0,.45)}',
     '#techi-about .ta-card:before{content:"";position:absolute;top:50%;width:16px;height:1px;background:var(--ta-line)}',
     '#techi-about .ta-club{margin:0 0 6px;font-size:13px;letter-spacing:.2em;color:var(--ta-cyan);text-transform:uppercase;font-weight:700}',
-    '#techi-about .ta-name{margin:0 0 10px;font-size:clamp(22px,1.9vw,30px);line-height:1.15;font-weight:700;color:var(--ta-ink)}',
-    '#techi-about .ta-when{font-size:clamp(26px,2.4vw,38px);line-height:1;font-weight:700;color:var(--ta-ink);letter-spacing:.02em}',
+    '#techi-about .ta-name{margin:0 0 8px;font-size:clamp(19px,1.6vw,25px);line-height:1.15;font-weight:700;color:var(--ta-ink)}',
+    '#techi-about .ta-when{font-size:clamp(22px,2vw,30px);line-height:1;font-weight:700;color:var(--ta-ink);letter-spacing:.02em}',
     '#techi-about .ta-when small{display:block;margin-top:8px;font-size:11px;letter-spacing:.24em;color:var(--ta-soft);font-weight:500}',
     '#techi-about .ta-hr{height:1px;margin:16px 0 14px;background:linear-gradient(90deg,var(--ta-line),transparent)}',
     '#techi-about .ta-desc{margin:0 0 8px;font-size:15px;font-weight:600;color:#cfe9ff}',
@@ -101,7 +119,7 @@
     '  #techi-about .ta-item{grid-template-columns:32px minmax(0,1fr);row-gap:14px;align-items:start}',
     '  #techi-about .ta-node{grid-column:1!important;grid-row:1;margin-top:26px}',
     '  #techi-about .ta-item .ta-card{grid-column:2!important;grid-row:1;justify-self:stretch!important;width:100%}',
-    '  #techi-about .ta-item .ta-media{grid-column:2!important;grid-row:2;justify-self:start!important;width:min(70%,240px)}',
+    '  #techi-about .ta-item .ta-media{grid-column:2!important;grid-row:2;justify-self:start!important;width:min(100%,340px)}',
     '  #techi-about .ta-item .ta-card:before{display:none}',
     '  #techi-about .ta-item .ta-media,#techi-about .ta-item .ta-card{transform:translateY(24px)!important}',
     '  #techi-about .ta-item.ta-in .ta-media,#techi-about .ta-item.ta-in .ta-card{transform:none!important}',
@@ -110,7 +128,7 @@
     '#about.mobile .title-container{display:none!important}',
     '#about.mobile .ta-mtitle{display:block;margin:0 0 22px}',
     '#about.mobile .ta-mtitle h2{margin:0 0 8px;font-size:11px;letter-spacing:.32em;color:#7fd4ff;font-weight:500}',
-    '#about.mobile .ta-mtitle h1{margin:0;font-size:clamp(40px,12vw,64px);line-height:1;letter-spacing:.03em;color:#00a8ff;font-weight:700;text-shadow:0 0 30px rgba(0,168,255,.5)}',
+    '#about.mobile .ta-mtitle h1{margin:0;font-size:clamp(32px,9vw,46px);line-height:1;letter-spacing:.03em;color:#00a8ff;font-weight:700;text-shadow:0 0 30px rgba(0,168,255,.5)}',
     '#about.mobile .ta-mtitle h3{margin:10px 0 0;font-size:11px;letter-spacing:.3em;color:#eaf7ff;font-weight:500}',
     '#about.mobile #techi-about .ta-hero{padding-top:130px;min-height:0}',
     '#about.mobile #techi-about .ta-lead{font-size:17px}',
@@ -147,55 +165,73 @@
     ];
   }
 
+  function sortedClubs() {
+    return (cfg.clubEvents || []).slice().sort(function (x, y) { return stamp(x) < stamp(y) ? -1 : stamp(x) > stamp(y) ? 1 : 0; });
+  }
+  function dayList(list) {
+    var d = [];
+    list.forEach(function (e) { if (e.date && d.indexOf(e.date) < 0) d.push(e.date); });
+    return d;
+  }
+  function startMs(e) { var t = Date.parse((e.date || '2000-01-01') + 'T' + (e.time || '00:00') + ':00+05:30'); return isNaN(t) ? 0 : t; }
+  function nowMs() { if (cfg.testNow) { var t = Date.parse(cfg.testNow); if (!isNaN(t)) return t; } return Date.now(); }
+  function status(e) {
+    var t = nowMs(), s = startMs(e), len = (cfg.eventLengthHours || 3) * 3600e3;
+    if (t < s) return ['UPCOMING', 'up'];
+    if (t < s + len) return ['LIVE NOW', 'live'];
+    return ['FINISHED', 'done'];
+  }
+  // open the day that has the next event (or day 1 before the fest)
+  function defaultDay(list, days) {
+    var t = nowMs(), len = (cfg.eventLengthHours || 3) * 3600e3;
+    for (var i = 0; i < list.length; i++) if (startMs(list[i]) + len >= t) return list[i].date;
+    return days[0] || 'all';
+  }
+
+  function itemHtml(e, n, days) {
+    var d = parseDate(e.date), st = status(e);
+    var src = e.posterWide || e.posterTall || e.poster;
+    var h = '<div class="ta-item ' + (n % 2 ? 'ta-r' : 'ta-l') + (st[1] === 'done' ? ' ta-done' : '') + '">';
+    h += '<div class="ta-media">' + (src ? '<div class="ta-bg" style="background-image:url(\'' + esc(BASE + src) + '\')"></div><img loading="lazy" alt="' + esc(e.event) + ' poster" src="' + esc(BASE + src) + '">' : '') + '</div>';
+    h += '<span class="ta-node"></span>';
+    h += '<div class="ta-card">';
+    h += '<span class="ta-badge ta-' + st[1] + '">' + st[0] + '</span>';
+    if (e.club) h += '<p class="ta-club">' + esc(e.club) + '</p>';
+    h += '<h4 class="ta-name">' + esc(e.event || '') + '</h4>';
+    h += '<div class="ta-when ta-mono">' + esc(e.time || '') + '<small>DAY ' + (days.indexOf(e.date) + 1) + ' &nbsp;/&nbsp; ' + WEEK[d.getDay()] + ' ' + d.getDate() + ' ' + MONTHS[d.getMonth()] + '</small></div>';
+    if (e.venue || e.description) h += '<div class="ta-hr"></div>';
+    if (e.venue) h += '<p class="ta-desc">' + esc(e.venue) + '</p>';
+    if (e.description) h += '<p class="ta-details">' + esc(e.description) + '</p>';
+    if (e.registerUrl) h += '<a class="ta-go" href="' + esc(e.registerUrl) + '" target="_blank" rel="noopener">REGISTER &rarr;</a>';
+    return h + '</div></div>';
+  }
+
   /* ---------------- build ---------------- */
   function build(root) {
     var a = cfg.about || {};
-    var majors = (cfg.majorEvents || []).slice().sort(function (x, y) { return stamp(x) < stamp(y) ? -1 : stamp(x) > stamp(y) ? 1 : 0; });
-    var days = [];
-    majors.forEach(function (m) { if (days.indexOf(m.date) < 0) days.push(m.date); });
+    // the timeline shows the CLUB (minor) events; the major events have their own slider in MAJOR EVENTS
+    var clubs = sortedClubs();
+    var days = dayList(clubs).sort();
 
     var h = '';
     h += '<section class="ta-hero">';
     h += '<div class="ta-mtitle"><h2>TECH FEST 2026</h2><h1>TECHIDEATE</h1><h3>MANIPAL UNIVERSITY JAIPUR</h3></div>';
     if (a.intro) h += '<p class="ta-lead">' + esc(a.intro) + '</p>';
     h += '<div class="ta-stats">' + stats().map(function (s) { return '<div class="ta-stat"><b class="ta-mono">' + s[0] + '</b><span>' + s[1] + '</span></div>'; }).join('') + '</div>';
-    if (a.cards && a.cards.length) {
-      h += '<div class="ta-cards">' + a.cards.map(function (c) { return '<div class="ta-info"><h4>' + esc(c.title) + '</h4><p>' + esc(c.text) + '</p></div>'; }).join('') + '</div>';
-    }
-    h += '<div class="ta-links"><a href="#techi-timeline" data-ta-jump>[TIMELINE]</a>';
+    h += '<div class="ta-links"><a href="#techi-timeline" data-ta-jump>[MINOR EVENTS TIMELINE]</a>';
     if (a.contactEmail) h += '<a href="mailto:' + esc(a.contactEmail) + '">[CONTACT]</a>';
     h += '</div>';
-    h += '<div class="ta-hint"><i></i>SCROLL FOR THE EVENT TIMELINE</div>';
+    h += '<div class="ta-hint"><i></i>SCROLL FOR THE MINOR EVENTS TIMELINE</div>';
     h += '</section>';
 
     h += '<section id="techi-timeline">';
-    h += '<div class="ta-head"><h2>MAJOR EVENTS</h2><h3>THE TIMELINE</h3><p>' + majors.length + ' flagship events across ' + days.length + ' days</p></div>';
-    h += '<div class="ta-tl"><div class="ta-rail"></div><div class="ta-fill"></div>';
-    var lastDay = null, side = 0;
-    majors.forEach(function (m) {
-      if (m.date !== lastDay) {
-        lastDay = m.date;
-        var d = parseDate(m.date);
-        h += '<div class="ta-day"><span class="ta-mono"><b>DAY ' + (days.indexOf(m.date) + 1) + '</b> &nbsp;/&nbsp; ' + WEEK[d.getDay()] + ' ' + d.getDate() + ' ' + MONTHS[d.getMonth()] + '</span></div>';
-      }
-      var d2 = parseDate(m.date);
-      var media = m.poster
-        ? '<div class="ta-bg" style="background-image:url(\'' + esc(BASE + m.poster) + '\')"></div><img loading="lazy" alt="' + esc(m.name) + ' poster" src="' + esc(BASE + m.poster) + '">'
-        : (m.video ? '<video muted loop playsinline preload="none" data-src="' + esc(BASE + m.video) + '"></video>' : '');
-      h += '<div class="ta-item ' + (side++ % 2 ? 'ta-r' : 'ta-l') + '">';
-      h += '<div class="ta-media">' + media + '</div>';
-      h += '<span class="ta-node"></span>';
-      h += '<div class="ta-card">';
-      if (m.club) h += '<p class="ta-club">' + esc(m.club) + '</p>';
-      h += '<h4 class="ta-name">' + esc(m.name) + '</h4>';
-      h += '<div class="ta-when ta-mono">' + esc(m.time || '') + '<small>DAY ' + (days.indexOf(m.date) + 1) + ' &nbsp;/&nbsp; ' + d2.getDate() + ' ' + MONTHS[d2.getMonth()] + ' ' + d2.getFullYear() + '</small></div>';
-      h += '<div class="ta-hr"></div>';
-      if (m.description) h += '<p class="ta-desc">' + esc(m.description) + '</p>';
-      if (m.details) h += '<p class="ta-details">' + esc(m.details) + '</p>';
-      if (m.registerUrl) h += '<a class="ta-go" href="' + esc(m.registerUrl) + '" target="_blank" rel="noopener">REGISTER &rarr;</a>';
-      h += '</div></div>';
-    });
-    h += '</div></section>';
+    h += '<div class="ta-head"><h2>CLUB EVENTS</h2><h3>MINOR EVENTS</h3><p>' + clubs.length + ' events by our clubs across ' + days.length + ' days</p></div>';
+    h += '<div class="ta-tabs">' + days.map(function (d, i) {
+      var dd = parseDate(d);
+      return '<button type="button" data-day="' + esc(d) + '"><b>DAY ' + (i + 1) + '</b><span>' + dd.getDate() + ' ' + MONTHS[dd.getMonth()] + '</span></button>';
+    }).join('') + '<button type="button" data-day="all"><b>ALL</b><span>' + clubs.length + ' EVENTS</span></button></div>';
+    h += '<div class="ta-tl"><div class="ta-rail"></div><div class="ta-fill"></div><div class="ta-list"></div></div>';
+    h += '</section>';
 
     h += '<footer class="ta-foot"><span>TECHIDEATE ’26 &nbsp;/&nbsp; MANIPAL UNIVERSITY JAIPUR</span><span>CREDITS:' +
       '<a href="https://duss.booth.pm/items/6110446" target="_blank" rel="noopener">[Avatar model modified]</a>' +
@@ -208,11 +244,11 @@
     root.appendChild(box);
     root.classList.add('ta-on');
     root.scrollTop = 0;
-    wire(root, box);
+    wire(root, box, clubs, days);
   }
 
   /* ---------------- behaviour ---------------- */
-  function wire(root, box) {
+  function wire(root, box, clubs, days) {
     // keep scroll / touch inside the About page so the 3D city doesn't react to it
     ['wheel', 'mousewheel', 'touchstart', 'touchmove'].forEach(function (ev) {
       root.addEventListener(ev, function (e) { e.stopPropagation(); }, { passive: true });
@@ -225,29 +261,46 @@
       t && root.scrollTo({ top: t.offsetTop - 40, behavior: 'smooth' });
     });
 
-    var items = [].slice.call(box.querySelectorAll('.ta-item'));
-    var reveal = function (it, on) {
-      it.classList.toggle('ta-in', on);
-      var v = it.querySelector('video');
-      if (!v) return;
-      if (on) { if (!v.src) v.src = v.getAttribute('data-src'); var p = v.play(); p && p.catch(function () {}); }
-      else v.pause();
-    };
-    if ('IntersectionObserver' in window) {
-      var io = new IntersectionObserver(function (ents) {
-        ents.forEach(function (en) { reveal(en.target, en.isIntersecting); });
-      }, { root: root, threshold: 0.2 });
-      items.forEach(function (it) { io.observe(it); });
-    } else items.forEach(function (it) { reveal(it, true); });
+    var list = box.querySelector('.ta-list'), io = null;
+    var reveal = function (it, on) { it.classList.toggle('ta-in', on); };
+    function render(day) {
+      [].forEach.call(box.querySelectorAll('.ta-tabs button'), function (b) { b.classList.toggle('on', b.getAttribute('data-day') === day); });
+      var show = day === 'all' ? clubs : clubs.filter(function (e) { return e.date === day; });
+      var h = '', last = null;
+      show.forEach(function (e, n) {
+        if (day === 'all' && e.date !== last) {
+          last = e.date; var d = parseDate(e.date);
+          h += '<div class="ta-day"><span class="ta-mono"><b>DAY ' + (days.indexOf(e.date) + 1) + '</b> &nbsp;/&nbsp; ' + WEEK[d.getDay()] + ' ' + d.getDate() + ' ' + MONTHS[d.getMonth()] + '</span></div>';
+        }
+        h += itemHtml(e, n, days);
+      });
+      if (!show.length) h = '<p class="ta-empty">No events on this day yet.</p>';
+      list.innerHTML = h;
+      var items = [].slice.call(list.querySelectorAll('.ta-item'));
+      if (io) io.disconnect();
+      if ('IntersectionObserver' in window) {
+        io = new IntersectionObserver(function (ents) { ents.forEach(function (en) { reveal(en.target, en.isIntersecting); }); }, { root: root, threshold: 0.15 });
+        items.forEach(function (it) { io.observe(it); });
+      } else items.forEach(function (it) { reveal(it, true); });
+      onScroll && onScroll();
+    }
+    var onScroll = null;
+    [].forEach.call(box.querySelectorAll('.ta-tabs button'), function (b) {
+      b.addEventListener('click', function () {
+        render(b.getAttribute('data-day'));
+        var t = box.querySelector('.ta-tabs');
+        if (t.getBoundingClientRect().top < 0) root.scrollTo({ top: t.offsetTop + box.querySelector('#techi-timeline').offsetTop - 90, behavior: 'smooth' });
+      });
+    });
 
     // glowing line fills up as you scroll down the timeline
     var tl = box.querySelector('.ta-tl'), fill = box.querySelector('.ta-fill');
-    var onScroll = function () {
+    function onScroll() {
       var r = tl.getBoundingClientRect(), mid = window.innerHeight * 0.6;
       fill.style.height = Math.max(0, Math.min(r.height, mid - r.top)) + 'px';
-    };
+    }
     root.addEventListener('scroll', onScroll, { passive: true });
-    onScroll();
+    render(defaultDay(clubs, days));
   }
 
   /* ---------------- start ---------------- */

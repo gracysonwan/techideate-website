@@ -3,9 +3,9 @@
     "Edit this file to change what the city screens show. See screens/README.txt for full steps.",
     "majorEvents -> the 10 VIDEO screens (V01-V10). Videos: 10 sec, 16:9, 1280x720, MP4, no sound.",
     "majorEvents also fill the EVENTS slider (centre screen), in this order: name, club, date, time, description (one short line), details (shown under INFOS), registerUrl (VISIT button).",
-    "majorEvents also fill the ABOUT timeline: poster = event poster shown there (any size, portrait looks best). If poster is empty, the video is shown instead.",
-    "about -> the text at the top of the ABOUT page (intro, 3 cards, contact email). Numbers (days, events, clubs) are counted automatically.",
+    "about -> the text at the top of the MINOR EVENTS page (intro sentence, contact email). Numbers (days, events, clubs) are counted automatically.",
     "clubEvents  -> rotate on the 26 POSTER screens (P01-P26), ordered by event time.",
+    "clubEvents also make the MINOR EVENTS timeline (sorted by date and time). Optional extra fields per event: venue, description, registerUrl.",
     "Upcoming events go on the screens closest to the centre. Finished events move to the outer screens.",
     "Posters: posterTall = 1:2 (e.g. 800x1600), posterWide = 2:1 (e.g. 1600x800). Keep text in the middle.",
     "date = YYYY-MM-DD, time = HH:MM (24 hour, India time)."
@@ -19,20 +19,6 @@
   "testNow": "",
   "about": {
     "intro": "TECHIDEATE is the annual technical fest of Manipal University Jaipur: three days where students build, break and rethink technology together.",
-    "cards": [
-      {
-        "title": "What it is",
-        "text": "Hackathons, coding contests, robotics, cybersecurity, AI and design challenges, all run by the clubs and student communities that make our campus tick."
-      },
-      {
-        "title": "Who it's for",
-        "text": "Every branch and every year. Whether you are writing your first line of code or shipping your tenth project, there is a stage for you."
-      },
-      {
-        "title": "This year's theme",
-        "text": "Build what comes next. Every event is designed to turn ideas into something real, from a 24-hour hackathon to a live startup pitch."
-      }
-    ],
     "contactEmail": "hello@techideate.in"
   },
   "majorEvents": [
@@ -43,7 +29,6 @@
       "date": "2026-10-14",
       "time": "10:00",
       "video": "videos/major-01.mp4",
-      "poster": "posters/major-01.jpg",
       "description": "Flagship event / placeholder",
       "details": "Placeholder details for Major Event 01. Replace this with what the event is about, who can join, team size, prizes and the venue.",
       "registerUrl": "/events"
@@ -55,7 +40,6 @@
       "date": "2026-10-15",
       "time": "10:00",
       "video": "videos/major-02.mp4",
-      "poster": "posters/major-02.jpg",
       "description": "Flagship event / placeholder",
       "details": "Placeholder details for Major Event 02. Replace this with what the event is about, who can join, team size, prizes and the venue.",
       "registerUrl": "/events"
@@ -67,7 +51,6 @@
       "date": "2026-10-16",
       "time": "10:00",
       "video": "videos/major-03.mp4",
-      "poster": "posters/major-03.jpg",
       "description": "Flagship event / placeholder",
       "details": "Placeholder details for Major Event 03. Replace this with what the event is about, who can join, team size, prizes and the venue.",
       "registerUrl": "/events"
@@ -79,7 +62,6 @@
       "date": "2026-10-14",
       "time": "10:00",
       "video": "videos/major-04.mp4",
-      "poster": "posters/major-04.jpg",
       "description": "Flagship event / placeholder",
       "details": "Placeholder details for Major Event 04. Replace this with what the event is about, who can join, team size, prizes and the venue.",
       "registerUrl": "/events"
@@ -91,7 +73,6 @@
       "date": "2026-10-15",
       "time": "13:00",
       "video": "videos/major-05.mp4",
-      "poster": "posters/major-05.jpg",
       "description": "Flagship event / placeholder",
       "details": "Placeholder details for Major Event 05. Replace this with what the event is about, who can join, team size, prizes and the venue.",
       "registerUrl": "/events"
@@ -103,7 +84,6 @@
       "date": "2026-10-16",
       "time": "13:00",
       "video": "videos/major-06.mp4",
-      "poster": "posters/major-06.jpg",
       "description": "Flagship event / placeholder",
       "details": "Placeholder details for Major Event 06. Replace this with what the event is about, who can join, team size, prizes and the venue.",
       "registerUrl": "/events"
@@ -115,7 +95,6 @@
       "date": "2026-10-14",
       "time": "13:00",
       "video": "videos/major-07.mp4",
-      "poster": "posters/major-07.jpg",
       "description": "Flagship event / placeholder",
       "details": "Placeholder details for Major Event 07. Replace this with what the event is about, who can join, team size, prizes and the venue.",
       "registerUrl": "/events"
@@ -127,7 +106,6 @@
       "date": "2026-10-15",
       "time": "13:00",
       "video": "videos/major-08.mp4",
-      "poster": "posters/major-08.jpg",
       "description": "Flagship event / placeholder",
       "details": "Placeholder details for Major Event 08. Replace this with what the event is about, who can join, team size, prizes and the venue.",
       "registerUrl": "/events"
@@ -139,7 +117,6 @@
       "date": "2026-10-16",
       "time": "16:00",
       "video": "videos/major-09.mp4",
-      "poster": "posters/major-09.jpg",
       "description": "Flagship event / placeholder",
       "details": "Placeholder details for Major Event 09. Replace this with what the event is about, who can join, team size, prizes and the venue.",
       "registerUrl": "/events"
@@ -151,7 +128,6 @@
       "date": "2026-10-14",
       "time": "16:00",
       "video": "videos/major-10.mp4",
-      "poster": "posters/major-10.jpg",
       "description": "Flagship event / placeholder",
       "details": "Placeholder details for Major Event 10. Replace this with what the event is about, who can join, team size, prizes and the venue.",
       "registerUrl": "/events"
@@ -164,7 +140,10 @@
       "date": "2026-10-15",
       "time": "14:00",
       "posterTall": "posters/event-01-tall.jpg",
-      "posterWide": "posters/event-01-wide.jpg"
+      "posterWide": "posters/event-01-wide.jpg",
+      "venue": "Venue placeholder",
+      "description": "Placeholder: one or two lines about what happens in this event.",
+      "registerUrl": ""
     },
     {
       "club": "Club 02",
@@ -172,7 +151,10 @@
       "date": "2026-10-16",
       "time": "10:00",
       "posterTall": "posters/event-02-tall.jpg",
-      "posterWide": "posters/event-02-wide.jpg"
+      "posterWide": "posters/event-02-wide.jpg",
+      "venue": "Venue placeholder",
+      "description": "Placeholder: one or two lines about what happens in this event.",
+      "registerUrl": ""
     },
     {
       "club": "Club 03",
@@ -180,7 +162,10 @@
       "date": "2026-10-14",
       "time": "15:00",
       "posterTall": "posters/event-03-tall.jpg",
-      "posterWide": "posters/event-03-wide.jpg"
+      "posterWide": "posters/event-03-wide.jpg",
+      "venue": "Venue placeholder",
+      "description": "Placeholder: one or two lines about what happens in this event.",
+      "registerUrl": ""
     },
     {
       "club": "Club 04",
@@ -188,7 +173,10 @@
       "date": "2026-10-15",
       "time": "11:00",
       "posterTall": "posters/event-04-tall.jpg",
-      "posterWide": "posters/event-04-wide.jpg"
+      "posterWide": "posters/event-04-wide.jpg",
+      "venue": "Venue placeholder",
+      "description": "Placeholder: one or two lines about what happens in this event.",
+      "registerUrl": ""
     },
     {
       "club": "Club 05",
@@ -196,7 +184,10 @@
       "date": "2026-10-16",
       "time": "16:00",
       "posterTall": "posters/event-05-tall.jpg",
-      "posterWide": "posters/event-05-wide.jpg"
+      "posterWide": "posters/event-05-wide.jpg",
+      "venue": "Venue placeholder",
+      "description": "Placeholder: one or two lines about what happens in this event.",
+      "registerUrl": ""
     },
     {
       "club": "Club 06",
@@ -204,7 +195,10 @@
       "date": "2026-10-14",
       "time": "12:00",
       "posterTall": "posters/event-06-tall.jpg",
-      "posterWide": "posters/event-06-wide.jpg"
+      "posterWide": "posters/event-06-wide.jpg",
+      "venue": "Venue placeholder",
+      "description": "Placeholder: one or two lines about what happens in this event.",
+      "registerUrl": ""
     },
     {
       "club": "Club 07",
@@ -212,7 +206,10 @@
       "date": "2026-10-15",
       "time": "17:00",
       "posterTall": "posters/event-07-tall.jpg",
-      "posterWide": "posters/event-07-wide.jpg"
+      "posterWide": "posters/event-07-wide.jpg",
+      "venue": "Venue placeholder",
+      "description": "Placeholder: one or two lines about what happens in this event.",
+      "registerUrl": ""
     },
     {
       "club": "Club 08",
@@ -220,7 +217,10 @@
       "date": "2026-10-16",
       "time": "13:00",
       "posterTall": "posters/event-08-tall.jpg",
-      "posterWide": "posters/event-08-wide.jpg"
+      "posterWide": "posters/event-08-wide.jpg",
+      "venue": "Venue placeholder",
+      "description": "Placeholder: one or two lines about what happens in this event.",
+      "registerUrl": ""
     },
     {
       "club": "Club 09",
@@ -228,7 +228,10 @@
       "date": "2026-10-14",
       "time": "09:00",
       "posterTall": "posters/event-09-tall.jpg",
-      "posterWide": "posters/event-09-wide.jpg"
+      "posterWide": "posters/event-09-wide.jpg",
+      "venue": "Venue placeholder",
+      "description": "Placeholder: one or two lines about what happens in this event.",
+      "registerUrl": ""
     },
     {
       "club": "Club 10",
@@ -236,7 +239,10 @@
       "date": "2026-10-15",
       "time": "14:00",
       "posterTall": "posters/event-10-tall.jpg",
-      "posterWide": "posters/event-10-wide.jpg"
+      "posterWide": "posters/event-10-wide.jpg",
+      "venue": "Venue placeholder",
+      "description": "Placeholder: one or two lines about what happens in this event.",
+      "registerUrl": ""
     },
     {
       "club": "Club 11",
@@ -244,7 +250,10 @@
       "date": "2026-10-16",
       "time": "10:00",
       "posterTall": "posters/event-11-tall.jpg",
-      "posterWide": "posters/event-11-wide.jpg"
+      "posterWide": "posters/event-11-wide.jpg",
+      "venue": "Venue placeholder",
+      "description": "Placeholder: one or two lines about what happens in this event.",
+      "registerUrl": ""
     },
     {
       "club": "Club 12",
@@ -252,7 +261,10 @@
       "date": "2026-10-14",
       "time": "15:00",
       "posterTall": "posters/event-12-tall.jpg",
-      "posterWide": "posters/event-12-wide.jpg"
+      "posterWide": "posters/event-12-wide.jpg",
+      "venue": "Venue placeholder",
+      "description": "Placeholder: one or two lines about what happens in this event.",
+      "registerUrl": ""
     },
     {
       "club": "Club 13",
@@ -260,7 +272,10 @@
       "date": "2026-10-15",
       "time": "11:00",
       "posterTall": "posters/event-13-tall.jpg",
-      "posterWide": "posters/event-13-wide.jpg"
+      "posterWide": "posters/event-13-wide.jpg",
+      "venue": "Venue placeholder",
+      "description": "Placeholder: one or two lines about what happens in this event.",
+      "registerUrl": ""
     },
     {
       "club": "Club 14",
@@ -268,7 +283,10 @@
       "date": "2026-10-16",
       "time": "16:00",
       "posterTall": "posters/event-14-tall.jpg",
-      "posterWide": "posters/event-14-wide.jpg"
+      "posterWide": "posters/event-14-wide.jpg",
+      "venue": "Venue placeholder",
+      "description": "Placeholder: one or two lines about what happens in this event.",
+      "registerUrl": ""
     },
     {
       "club": "Club 15",
@@ -276,7 +294,10 @@
       "date": "2026-10-14",
       "time": "12:00",
       "posterTall": "posters/event-15-tall.jpg",
-      "posterWide": "posters/event-15-wide.jpg"
+      "posterWide": "posters/event-15-wide.jpg",
+      "venue": "Venue placeholder",
+      "description": "Placeholder: one or two lines about what happens in this event.",
+      "registerUrl": ""
     },
     {
       "club": "Club 16",
@@ -284,7 +305,10 @@
       "date": "2026-10-15",
       "time": "17:00",
       "posterTall": "posters/event-16-tall.jpg",
-      "posterWide": "posters/event-16-wide.jpg"
+      "posterWide": "posters/event-16-wide.jpg",
+      "venue": "Venue placeholder",
+      "description": "Placeholder: one or two lines about what happens in this event.",
+      "registerUrl": ""
     },
     {
       "club": "Club 17",
@@ -292,7 +316,10 @@
       "date": "2026-10-16",
       "time": "13:00",
       "posterTall": "posters/event-17-tall.jpg",
-      "posterWide": "posters/event-17-wide.jpg"
+      "posterWide": "posters/event-17-wide.jpg",
+      "venue": "Venue placeholder",
+      "description": "Placeholder: one or two lines about what happens in this event.",
+      "registerUrl": ""
     },
     {
       "club": "Club 18",
@@ -300,7 +327,10 @@
       "date": "2026-10-14",
       "time": "09:00",
       "posterTall": "posters/event-18-tall.jpg",
-      "posterWide": "posters/event-18-wide.jpg"
+      "posterWide": "posters/event-18-wide.jpg",
+      "venue": "Venue placeholder",
+      "description": "Placeholder: one or two lines about what happens in this event.",
+      "registerUrl": ""
     },
     {
       "club": "Club 19",
@@ -308,7 +338,10 @@
       "date": "2026-10-15",
       "time": "14:00",
       "posterTall": "posters/event-19-tall.jpg",
-      "posterWide": "posters/event-19-wide.jpg"
+      "posterWide": "posters/event-19-wide.jpg",
+      "venue": "Venue placeholder",
+      "description": "Placeholder: one or two lines about what happens in this event.",
+      "registerUrl": ""
     },
     {
       "club": "Club 20",
@@ -316,7 +349,10 @@
       "date": "2026-10-16",
       "time": "10:00",
       "posterTall": "posters/event-20-tall.jpg",
-      "posterWide": "posters/event-20-wide.jpg"
+      "posterWide": "posters/event-20-wide.jpg",
+      "venue": "Venue placeholder",
+      "description": "Placeholder: one or two lines about what happens in this event.",
+      "registerUrl": ""
     },
     {
       "club": "Club 21",
@@ -324,7 +360,10 @@
       "date": "2026-10-14",
       "time": "15:00",
       "posterTall": "posters/event-21-tall.jpg",
-      "posterWide": "posters/event-21-wide.jpg"
+      "posterWide": "posters/event-21-wide.jpg",
+      "venue": "Venue placeholder",
+      "description": "Placeholder: one or two lines about what happens in this event.",
+      "registerUrl": ""
     },
     {
       "club": "Club 22",
@@ -332,7 +371,10 @@
       "date": "2026-10-15",
       "time": "11:00",
       "posterTall": "posters/event-22-tall.jpg",
-      "posterWide": "posters/event-22-wide.jpg"
+      "posterWide": "posters/event-22-wide.jpg",
+      "venue": "Venue placeholder",
+      "description": "Placeholder: one or two lines about what happens in this event.",
+      "registerUrl": ""
     },
     {
       "club": "Club 23",
@@ -340,7 +382,10 @@
       "date": "2026-10-16",
       "time": "16:00",
       "posterTall": "posters/event-23-tall.jpg",
-      "posterWide": "posters/event-23-wide.jpg"
+      "posterWide": "posters/event-23-wide.jpg",
+      "venue": "Venue placeholder",
+      "description": "Placeholder: one or two lines about what happens in this event.",
+      "registerUrl": ""
     },
     {
       "club": "Club 24",
@@ -348,7 +393,10 @@
       "date": "2026-10-14",
       "time": "12:00",
       "posterTall": "posters/event-24-tall.jpg",
-      "posterWide": "posters/event-24-wide.jpg"
+      "posterWide": "posters/event-24-wide.jpg",
+      "venue": "Venue placeholder",
+      "description": "Placeholder: one or two lines about what happens in this event.",
+      "registerUrl": ""
     },
     {
       "club": "Club 25",
@@ -356,7 +404,10 @@
       "date": "2026-10-15",
       "time": "17:00",
       "posterTall": "posters/event-25-tall.jpg",
-      "posterWide": "posters/event-25-wide.jpg"
+      "posterWide": "posters/event-25-wide.jpg",
+      "venue": "Venue placeholder",
+      "description": "Placeholder: one or two lines about what happens in this event.",
+      "registerUrl": ""
     },
     {
       "club": "Club 26",
@@ -364,7 +415,10 @@
       "date": "2026-10-16",
       "time": "13:00",
       "posterTall": "posters/event-26-tall.jpg",
-      "posterWide": "posters/event-26-wide.jpg"
+      "posterWide": "posters/event-26-wide.jpg",
+      "venue": "Venue placeholder",
+      "description": "Placeholder: one or two lines about what happens in this event.",
+      "registerUrl": ""
     },
     {
       "club": "Club 27",
@@ -372,7 +426,10 @@
       "date": "2026-10-14",
       "time": "09:00",
       "posterTall": "posters/event-27-tall.jpg",
-      "posterWide": "posters/event-27-wide.jpg"
+      "posterWide": "posters/event-27-wide.jpg",
+      "venue": "Venue placeholder",
+      "description": "Placeholder: one or two lines about what happens in this event.",
+      "registerUrl": ""
     },
     {
       "club": "Club 28",
@@ -380,7 +437,10 @@
       "date": "2026-10-15",
       "time": "14:00",
       "posterTall": "posters/event-28-tall.jpg",
-      "posterWide": "posters/event-28-wide.jpg"
+      "posterWide": "posters/event-28-wide.jpg",
+      "venue": "Venue placeholder",
+      "description": "Placeholder: one or two lines about what happens in this event.",
+      "registerUrl": ""
     },
     {
       "club": "Club 29",
@@ -388,7 +448,10 @@
       "date": "2026-10-16",
       "time": "10:00",
       "posterTall": "posters/event-29-tall.jpg",
-      "posterWide": "posters/event-29-wide.jpg"
+      "posterWide": "posters/event-29-wide.jpg",
+      "venue": "Venue placeholder",
+      "description": "Placeholder: one or two lines about what happens in this event.",
+      "registerUrl": ""
     },
     {
       "club": "Club 30",
@@ -396,7 +459,10 @@
       "date": "2026-10-14",
       "time": "15:00",
       "posterTall": "posters/event-30-tall.jpg",
-      "posterWide": "posters/event-30-wide.jpg"
+      "posterWide": "posters/event-30-wide.jpg",
+      "venue": "Venue placeholder",
+      "description": "Placeholder: one or two lines about what happens in this event.",
+      "registerUrl": ""
     },
     {
       "club": "Club 31",
@@ -404,7 +470,10 @@
       "date": "2026-10-15",
       "time": "11:00",
       "posterTall": "posters/event-31-tall.jpg",
-      "posterWide": "posters/event-31-wide.jpg"
+      "posterWide": "posters/event-31-wide.jpg",
+      "venue": "Venue placeholder",
+      "description": "Placeholder: one or two lines about what happens in this event.",
+      "registerUrl": ""
     },
     {
       "club": "Club 32",
@@ -412,7 +481,10 @@
       "date": "2026-10-16",
       "time": "16:00",
       "posterTall": "posters/event-32-tall.jpg",
-      "posterWide": "posters/event-32-wide.jpg"
+      "posterWide": "posters/event-32-wide.jpg",
+      "venue": "Venue placeholder",
+      "description": "Placeholder: one or two lines about what happens in this event.",
+      "registerUrl": ""
     },
     {
       "club": "Club 33",
@@ -420,7 +492,10 @@
       "date": "2026-10-14",
       "time": "12:00",
       "posterTall": "posters/event-33-tall.jpg",
-      "posterWide": "posters/event-33-wide.jpg"
+      "posterWide": "posters/event-33-wide.jpg",
+      "venue": "Venue placeholder",
+      "description": "Placeholder: one or two lines about what happens in this event.",
+      "registerUrl": ""
     },
     {
       "club": "Club 34",
@@ -428,7 +503,10 @@
       "date": "2026-10-15",
       "time": "17:00",
       "posterTall": "posters/event-34-tall.jpg",
-      "posterWide": "posters/event-34-wide.jpg"
+      "posterWide": "posters/event-34-wide.jpg",
+      "venue": "Venue placeholder",
+      "description": "Placeholder: one or two lines about what happens in this event.",
+      "registerUrl": ""
     },
     {
       "club": "Club 35",
@@ -436,7 +514,10 @@
       "date": "2026-10-16",
       "time": "13:00",
       "posterTall": "posters/event-35-tall.jpg",
-      "posterWide": "posters/event-35-wide.jpg"
+      "posterWide": "posters/event-35-wide.jpg",
+      "venue": "Venue placeholder",
+      "description": "Placeholder: one or two lines about what happens in this event.",
+      "registerUrl": ""
     },
     {
       "club": "Club 36",
@@ -444,7 +525,10 @@
       "date": "2026-10-14",
       "time": "09:00",
       "posterTall": "posters/event-36-tall.jpg",
-      "posterWide": "posters/event-36-wide.jpg"
+      "posterWide": "posters/event-36-wide.jpg",
+      "venue": "Venue placeholder",
+      "description": "Placeholder: one or two lines about what happens in this event.",
+      "registerUrl": ""
     },
     {
       "club": "Club 37",
@@ -452,7 +536,10 @@
       "date": "2026-10-15",
       "time": "14:00",
       "posterTall": "posters/event-37-tall.jpg",
-      "posterWide": "posters/event-37-wide.jpg"
+      "posterWide": "posters/event-37-wide.jpg",
+      "venue": "Venue placeholder",
+      "description": "Placeholder: one or two lines about what happens in this event.",
+      "registerUrl": ""
     },
     {
       "club": "Club 38",
@@ -460,7 +547,10 @@
       "date": "2026-10-16",
       "time": "10:00",
       "posterTall": "posters/event-38-tall.jpg",
-      "posterWide": "posters/event-38-wide.jpg"
+      "posterWide": "posters/event-38-wide.jpg",
+      "venue": "Venue placeholder",
+      "description": "Placeholder: one or two lines about what happens in this event.",
+      "registerUrl": ""
     },
     {
       "club": "Club 39",
@@ -468,7 +558,10 @@
       "date": "2026-10-14",
       "time": "15:00",
       "posterTall": "posters/event-39-tall.jpg",
-      "posterWide": "posters/event-39-wide.jpg"
+      "posterWide": "posters/event-39-wide.jpg",
+      "venue": "Venue placeholder",
+      "description": "Placeholder: one or two lines about what happens in this event.",
+      "registerUrl": ""
     },
     {
       "club": "Club 40",
@@ -476,7 +569,10 @@
       "date": "2026-10-15",
       "time": "11:00",
       "posterTall": "posters/event-40-tall.jpg",
-      "posterWide": "posters/event-40-wide.jpg"
+      "posterWide": "posters/event-40-wide.jpg",
+      "venue": "Venue placeholder",
+      "description": "Placeholder: one or two lines about what happens in this event.",
+      "registerUrl": ""
     },
     {
       "club": "Club 01",
@@ -484,7 +580,10 @@
       "date": "2026-10-16",
       "time": "16:00",
       "posterTall": "posters/event-41-tall.jpg",
-      "posterWide": "posters/event-41-wide.jpg"
+      "posterWide": "posters/event-41-wide.jpg",
+      "venue": "Venue placeholder",
+      "description": "Placeholder: one or two lines about what happens in this event.",
+      "registerUrl": ""
     },
     {
       "club": "Club 02",
@@ -492,7 +591,10 @@
       "date": "2026-10-14",
       "time": "12:00",
       "posterTall": "posters/event-42-tall.jpg",
-      "posterWide": "posters/event-42-wide.jpg"
+      "posterWide": "posters/event-42-wide.jpg",
+      "venue": "Venue placeholder",
+      "description": "Placeholder: one or two lines about what happens in this event.",
+      "registerUrl": ""
     },
     {
       "club": "Club 03",
@@ -500,7 +602,10 @@
       "date": "2026-10-15",
       "time": "17:00",
       "posterTall": "posters/event-43-tall.jpg",
-      "posterWide": "posters/event-43-wide.jpg"
+      "posterWide": "posters/event-43-wide.jpg",
+      "venue": "Venue placeholder",
+      "description": "Placeholder: one or two lines about what happens in this event.",
+      "registerUrl": ""
     },
     {
       "club": "Club 04",
@@ -508,7 +613,10 @@
       "date": "2026-10-16",
       "time": "13:00",
       "posterTall": "posters/event-44-tall.jpg",
-      "posterWide": "posters/event-44-wide.jpg"
+      "posterWide": "posters/event-44-wide.jpg",
+      "venue": "Venue placeholder",
+      "description": "Placeholder: one or two lines about what happens in this event.",
+      "registerUrl": ""
     },
     {
       "club": "Club 05",
@@ -516,7 +624,10 @@
       "date": "2026-10-14",
       "time": "09:00",
       "posterTall": "posters/event-45-tall.jpg",
-      "posterWide": "posters/event-45-wide.jpg"
+      "posterWide": "posters/event-45-wide.jpg",
+      "venue": "Venue placeholder",
+      "description": "Placeholder: one or two lines about what happens in this event.",
+      "registerUrl": ""
     },
     {
       "club": "Club 06",
@@ -524,7 +635,10 @@
       "date": "2026-10-15",
       "time": "14:00",
       "posterTall": "posters/event-46-tall.jpg",
-      "posterWide": "posters/event-46-wide.jpg"
+      "posterWide": "posters/event-46-wide.jpg",
+      "venue": "Venue placeholder",
+      "description": "Placeholder: one or two lines about what happens in this event.",
+      "registerUrl": ""
     },
     {
       "club": "Club 07",
@@ -532,7 +646,10 @@
       "date": "2026-10-16",
       "time": "10:00",
       "posterTall": "posters/event-47-tall.jpg",
-      "posterWide": "posters/event-47-wide.jpg"
+      "posterWide": "posters/event-47-wide.jpg",
+      "venue": "Venue placeholder",
+      "description": "Placeholder: one or two lines about what happens in this event.",
+      "registerUrl": ""
     },
     {
       "club": "Club 08",
@@ -540,7 +657,10 @@
       "date": "2026-10-14",
       "time": "15:00",
       "posterTall": "posters/event-48-tall.jpg",
-      "posterWide": "posters/event-48-wide.jpg"
+      "posterWide": "posters/event-48-wide.jpg",
+      "venue": "Venue placeholder",
+      "description": "Placeholder: one or two lines about what happens in this event.",
+      "registerUrl": ""
     },
     {
       "club": "Club 09",
@@ -548,7 +668,10 @@
       "date": "2026-10-15",
       "time": "11:00",
       "posterTall": "posters/event-49-tall.jpg",
-      "posterWide": "posters/event-49-wide.jpg"
+      "posterWide": "posters/event-49-wide.jpg",
+      "venue": "Venue placeholder",
+      "description": "Placeholder: one or two lines about what happens in this event.",
+      "registerUrl": ""
     },
     {
       "club": "Club 10",
@@ -556,7 +679,10 @@
       "date": "2026-10-16",
       "time": "16:00",
       "posterTall": "posters/event-50-tall.jpg",
-      "posterWide": "posters/event-50-wide.jpg"
+      "posterWide": "posters/event-50-wide.jpg",
+      "venue": "Venue placeholder",
+      "description": "Placeholder: one or two lines about what happens in this event.",
+      "registerUrl": ""
     },
     {
       "club": "Club 11",
@@ -564,7 +690,10 @@
       "date": "2026-10-14",
       "time": "12:00",
       "posterTall": "posters/event-51-tall.jpg",
-      "posterWide": "posters/event-51-wide.jpg"
+      "posterWide": "posters/event-51-wide.jpg",
+      "venue": "Venue placeholder",
+      "description": "Placeholder: one or two lines about what happens in this event.",
+      "registerUrl": ""
     },
     {
       "club": "Club 12",
@@ -572,7 +701,10 @@
       "date": "2026-10-15",
       "time": "17:00",
       "posterTall": "posters/event-52-tall.jpg",
-      "posterWide": "posters/event-52-wide.jpg"
+      "posterWide": "posters/event-52-wide.jpg",
+      "venue": "Venue placeholder",
+      "description": "Placeholder: one or two lines about what happens in this event.",
+      "registerUrl": ""
     },
     {
       "club": "Club 13",
@@ -580,7 +712,10 @@
       "date": "2026-10-16",
       "time": "13:00",
       "posterTall": "posters/event-53-tall.jpg",
-      "posterWide": "posters/event-53-wide.jpg"
+      "posterWide": "posters/event-53-wide.jpg",
+      "venue": "Venue placeholder",
+      "description": "Placeholder: one or two lines about what happens in this event.",
+      "registerUrl": ""
     },
     {
       "club": "Club 14",
@@ -588,7 +723,10 @@
       "date": "2026-10-14",
       "time": "09:00",
       "posterTall": "posters/event-54-tall.jpg",
-      "posterWide": "posters/event-54-wide.jpg"
+      "posterWide": "posters/event-54-wide.jpg",
+      "venue": "Venue placeholder",
+      "description": "Placeholder: one or two lines about what happens in this event.",
+      "registerUrl": ""
     },
     {
       "club": "Club 15",
@@ -596,7 +734,10 @@
       "date": "2026-10-15",
       "time": "14:00",
       "posterTall": "posters/event-55-tall.jpg",
-      "posterWide": "posters/event-55-wide.jpg"
+      "posterWide": "posters/event-55-wide.jpg",
+      "venue": "Venue placeholder",
+      "description": "Placeholder: one or two lines about what happens in this event.",
+      "registerUrl": ""
     }
   ]
 }
