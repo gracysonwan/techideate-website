@@ -68,6 +68,18 @@ Everything is controlled by ONE file: screens.json (in this folder).
   Vercel updates the live site in 1-2 minutes. Refresh with Ctrl + Shift + R.
 
 
+5. ABOUT PAGE (intro + event timeline)
+--------------------------------------
+  The ABOUT page also reads screens.json, so you edit it in the same place:
+    "about"        intro sentence, the 3 small cards, contact email
+    "majorEvents"  each major event is one stop on the timeline, sorted by
+                   date and time automatically. "poster" is the picture shown
+                   next to it: put the image in screens/posters/ (portrait looks
+                   best, e.g. 1080x1350, under 400 KB). If "poster" is "" the
+                   event video is shown there instead.
+  The numbers (days, events, clubs) are counted from screens.json by themselves.
+
+
 TIPS
 ----
   - screens.json must stay valid JSON: keep the quotes and commas exactly like the

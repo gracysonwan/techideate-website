@@ -55,6 +55,14 @@ onMounted(() => {
     screensEl.defer = true
     document.body.appendChild(screensEl)
   }
+
+  // TECHIDEATE About page: intro + event timeline (content from public/screens/screens.json)
+  if (!document.querySelector('script[src*="about-timeline"]')) {
+    const aboutEl = document.createElement('script')
+    aboutEl.src = '/about/about-timeline.js?v=about1'
+    aboutEl.defer = true
+    document.body.appendChild(aboutEl)
+  }
 })
 
 onUnmounted(() => {

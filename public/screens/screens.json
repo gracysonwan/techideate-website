@@ -3,6 +3,8 @@
     "Edit this file to change what the city screens show. See screens/README.txt for full steps.",
     "majorEvents -> the 10 VIDEO screens (V01-V10). Videos: 10 sec, 16:9, 1280x720, MP4, no sound.",
     "majorEvents also fill the EVENTS slider (centre screen), in this order: name, club, date, time, description (one short line), details (shown under INFOS), registerUrl (VISIT button).",
+    "majorEvents also fill the ABOUT timeline: poster = event poster shown there (any size, portrait looks best). If poster is empty, the video is shown instead.",
+    "about -> the text at the top of the ABOUT page (intro, 3 cards, contact email). Numbers (days, events, clubs) are counted automatically.",
     "clubEvents  -> rotate on the 26 POSTER screens (P01-P26), ordered by event time.",
     "Upcoming events go on the screens closest to the centre. Finished events move to the outer screens.",
     "Posters: posterTall = 1:2 (e.g. 800x1600), posterWide = 2:1 (e.g. 1600x800). Keep text in the middle.",
@@ -15,6 +17,24 @@
     "phone": 2
   },
   "testNow": "",
+  "about": {
+    "intro": "TECHIDEATE is the annual technical fest of Manipal University Jaipur: three days where students build, break and rethink technology together.",
+    "cards": [
+      {
+        "title": "What it is",
+        "text": "Hackathons, coding contests, robotics, cybersecurity, AI and design challenges, all run by the clubs and student communities that make our campus tick."
+      },
+      {
+        "title": "Who it's for",
+        "text": "Every branch and every year. Whether you are writing your first line of code or shipping your tenth project, there is a stage for you."
+      },
+      {
+        "title": "This year's theme",
+        "text": "Build what comes next. Every event is designed to turn ideas into something real, from a 24-hour hackathon to a live startup pitch."
+      }
+    ],
+    "contactEmail": "hello@techideate.in"
+  },
   "majorEvents": [
     {
       "screen": "V01",
@@ -23,6 +43,7 @@
       "date": "2026-10-14",
       "time": "10:00",
       "video": "videos/major-01.mp4",
+      "poster": "posters/major-01.jpg",
       "description": "Flagship event / placeholder",
       "details": "Placeholder details for Major Event 01. Replace this with what the event is about, who can join, team size, prizes and the venue.",
       "registerUrl": "/events"
@@ -34,6 +55,7 @@
       "date": "2026-10-15",
       "time": "10:00",
       "video": "videos/major-02.mp4",
+      "poster": "posters/major-02.jpg",
       "description": "Flagship event / placeholder",
       "details": "Placeholder details for Major Event 02. Replace this with what the event is about, who can join, team size, prizes and the venue.",
       "registerUrl": "/events"
@@ -45,6 +67,7 @@
       "date": "2026-10-16",
       "time": "10:00",
       "video": "videos/major-03.mp4",
+      "poster": "posters/major-03.jpg",
       "description": "Flagship event / placeholder",
       "details": "Placeholder details for Major Event 03. Replace this with what the event is about, who can join, team size, prizes and the venue.",
       "registerUrl": "/events"
@@ -56,6 +79,7 @@
       "date": "2026-10-14",
       "time": "10:00",
       "video": "videos/major-04.mp4",
+      "poster": "posters/major-04.jpg",
       "description": "Flagship event / placeholder",
       "details": "Placeholder details for Major Event 04. Replace this with what the event is about, who can join, team size, prizes and the venue.",
       "registerUrl": "/events"
@@ -67,6 +91,7 @@
       "date": "2026-10-15",
       "time": "13:00",
       "video": "videos/major-05.mp4",
+      "poster": "posters/major-05.jpg",
       "description": "Flagship event / placeholder",
       "details": "Placeholder details for Major Event 05. Replace this with what the event is about, who can join, team size, prizes and the venue.",
       "registerUrl": "/events"
@@ -78,6 +103,7 @@
       "date": "2026-10-16",
       "time": "13:00",
       "video": "videos/major-06.mp4",
+      "poster": "posters/major-06.jpg",
       "description": "Flagship event / placeholder",
       "details": "Placeholder details for Major Event 06. Replace this with what the event is about, who can join, team size, prizes and the venue.",
       "registerUrl": "/events"
@@ -89,6 +115,7 @@
       "date": "2026-10-14",
       "time": "13:00",
       "video": "videos/major-07.mp4",
+      "poster": "posters/major-07.jpg",
       "description": "Flagship event / placeholder",
       "details": "Placeholder details for Major Event 07. Replace this with what the event is about, who can join, team size, prizes and the venue.",
       "registerUrl": "/events"
@@ -100,6 +127,7 @@
       "date": "2026-10-15",
       "time": "13:00",
       "video": "videos/major-08.mp4",
+      "poster": "posters/major-08.jpg",
       "description": "Flagship event / placeholder",
       "details": "Placeholder details for Major Event 08. Replace this with what the event is about, who can join, team size, prizes and the venue.",
       "registerUrl": "/events"
@@ -111,6 +139,7 @@
       "date": "2026-10-16",
       "time": "16:00",
       "video": "videos/major-09.mp4",
+      "poster": "posters/major-09.jpg",
       "description": "Flagship event / placeholder",
       "details": "Placeholder details for Major Event 09. Replace this with what the event is about, who can join, team size, prizes and the venue.",
       "registerUrl": "/events"
@@ -122,6 +151,7 @@
       "date": "2026-10-14",
       "time": "16:00",
       "video": "videos/major-10.mp4",
+      "poster": "posters/major-10.jpg",
       "description": "Flagship event / placeholder",
       "details": "Placeholder details for Major Event 10. Replace this with what the event is about, who can join, team size, prizes and the venue.",
       "registerUrl": "/events"
